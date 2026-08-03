@@ -1,0 +1,6 @@
+node_modules/
+.next/
+out/
+.playwright-mcp/
+hush-landing.png
+.DS_Store
