@@ -294,8 +294,8 @@ main {
 .problem-solution__inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 654px);
-  align-items: end;
-  gap: 0;
+  align-items: center;
+  column-gap: clamp(32px, 4vw, 64px);
   height: 100%;
   padding-top: 56px;
   padding-bottom: 56px;
@@ -307,7 +307,7 @@ main {
   align-items: flex-start;
   gap: 32px;
   max-width: 590px;
-  padding-right: 26px;
+  padding-right: 0;
 }
 
 .problem-column h2 {
@@ -336,7 +336,9 @@ main {
   flex-direction: column;
   align-items: flex-end;
   gap: 32px;
+  align-self: center;
   min-width: 0;
+  width: 100%;
 }
 
 .solution-column h3 {
@@ -378,7 +380,7 @@ main {
 
 .transaction-amount {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
@@ -410,17 +412,24 @@ main {
 }
 
 .token__icon--ada {
-  background: var(--panel);
+  border-color: var(--paper);
+  background: var(--paper);
 }
 
 .token__icon--usdc {
-  border-color: #2563eb;
-  background: #2563eb;
+  border-color: transparent;
+  background: transparent;
 }
 
 .token__icon img {
   width: 16px;
   height: 16px;
+  object-fit: contain;
+}
+
+.token__icon--usdc img {
+  width: 24px;
+  height: 24px;
 }
 
 .token__label {
@@ -912,6 +921,14 @@ main {
   font-weight: 600;
 }
 
+.closing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
 .hush-footer {
   position: relative;
   width: 100%;
@@ -1378,6 +1395,14 @@ main {
 
   .closing-content {
     gap: 32px;
+  }
+
+  .closing-actions {
+    width: 100%;
+  }
+
+  .closing-actions .button {
+    width: 100%;
   }
 
   .closing h2 {

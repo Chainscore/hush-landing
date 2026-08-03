@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently --kill-others-on-fail --names next,docs \"next dev --port 3000\" \"npm run docs:dev\"",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "docs:dev": "npm --prefix docs run start -- --port 3001",
+    "docs:build": "npm --prefix docs run build",
+    "docs:serve": "npm --prefix docs run serve"
   },
   "dependencies": {
     "next": "16.2.12",
@@ -16,6 +19,7 @@
     "@types/node": "^22.10.0",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "concurrently": "^9.2.4",
     "typescript": "^5.7.2"
   }
 }

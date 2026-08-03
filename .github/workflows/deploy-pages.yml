@@ -37,6 +37,15 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Install documentation dependencies
+        run: npm --prefix docs ci
+
+      - name: Build documentation site
+        run: npm --prefix docs run build
+
+      - name: Add documentation site to Pages artifact
+        run: mkdir -p out/docs && cp -R docs/build/. out/docs/
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

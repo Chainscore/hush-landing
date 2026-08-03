@@ -5,8 +5,8 @@ const assets = {
   modes: "/assets/section-3-modes.png",
   guarantees: "/assets/section-5-value-props.png",
   closing: "/assets/section-8-closing.png",
-  ada: "/assets/circle-x.svg",
-  usdc: "/assets/circle-dollar-sign.svg",
+  ada: "/assets/cardano-icon.svg",
+  usdc: "/assets/usdc-token.svg",
   swap: "/assets/refresh-cw.svg",
   pay: "/assets/file-text.svg",
   send: "/assets/send.svg",
@@ -14,11 +14,18 @@ const assets = {
   arc: "/assets/veiled-arc.svg",
 };
 
+const communityLinks = {
+  docs: "/docs/",
+  discord: "https://discord.com/",
+  twitter: "https://twitter.com/",
+};
+
 type ButtonProps = {
   children: React.ReactNode;
   href?: string;
   variant?: "solid" | "outline";
   className?: string;
+  external?: boolean;
 };
 
 function Button({
@@ -26,9 +33,15 @@ function Button({
   href = "#launch",
   variant = "solid",
   className = "",
+  external = false,
 }: ButtonProps) {
   return (
-    <a className={`button button--${variant} ${className}`} href={href}>
+    <a
+      className={`button button--${variant} ${className}`}
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+    >
       {children}
     </a>
   );
@@ -144,11 +157,12 @@ function SiteHeader() {
       <nav className="desktop-nav" aria-label="Primary navigation">
         <a href="#protocol">Protocol</a>
         <a href="#developers">Developers</a>
+        <a href={communityLinks.docs}>Docs</a>
         <a href="#ecosystem">Ecosystem</a>
       </nav>
 
-      <Button href="#launch" className="header-button">
-        Launch app
+      <Button href={communityLinks.discord} className="header-button" external>
+        Join Discord
       </Button>
 
       <details className="mobile-nav">
@@ -156,8 +170,9 @@ function SiteHeader() {
         <nav aria-label="Mobile navigation">
           <a href="#protocol">Protocol</a>
           <a href="#developers">Developers</a>
+          <a href={communityLinks.docs}>Docs</a>
           <a href="#ecosystem">Ecosystem</a>
-          <a href="#launch">Launch app</a>
+          <a href={communityLinks.discord} target="_blank" rel="noreferrer">Join Discord</a>
         </nav>
       </details>
     </header>
@@ -183,9 +198,9 @@ function Hero() {
               Hush privately finds competing quotes, sponsors the network fee, and settles directly from your wallet.
             </p>
             <div className="hero-actions">
-              <Button href="#launch">Launch Hush</Button>
-              <Button href="#protocol" variant="outline">
-                Read the protocol
+              <Button href={communityLinks.discord} external>Join Discord</Button>
+              <Button href={communityLinks.twitter} variant="outline" external>
+                Follow on Twitter
               </Button>
             </div>
           </div>
@@ -206,8 +221,8 @@ function ProblemSolution() {
             <p>A large swap signals your urgency.</p>
             <p>A treasury movement exposes your position.</p>
           </div>
-          <Button href="#guarantees" variant="outline">
-            Learn More →
+          <Button href={`${communityLinks.docs}protocol/overview/`} variant="outline">
+            Read the docs →
           </Button>
         </div>
 
@@ -353,7 +368,10 @@ function Closing() {
         <div className="closing-content reveal reveal--scale" data-reveal>
           <h2>The market does not need to know.</h2>
           <p>Execute through Hush.</p>
-          <Button href="#top">Launch Hush</Button>
+          <div className="closing-actions">
+            <Button href={communityLinks.discord} external>Join Discord</Button>
+            <Button href={communityLinks.twitter} variant="outline" external>Follow on Twitter</Button>
+          </div>
         </div>
       </div>
     </section>
@@ -366,7 +384,7 @@ function HushFooter() {
       <div className="hush-footer__inner">
         <div className="hush-footer__utility reveal reveal--up" data-reveal>
           <span>Confidential execution for open markets</span>
-          <a href="#launch">Launch Hush <b>↗</b></a>
+          <a href={communityLinks.discord} target="_blank" rel="noreferrer">Join Discord <b>↗</b></a>
         </div>
 
         <a className="hush-footer__wordmark reveal reveal--up" data-reveal data-delay="100" href="#top" aria-label="Hush home">
@@ -377,9 +395,9 @@ function HushFooter() {
           <span>© 2026 hush</span>
           <span>Built on Cardano</span>
           <nav aria-label="Footer navigation">
-            <a href="#protocol">Protocol</a>
+            <a href={communityLinks.docs}>Docs</a>
             <a href="#developers">Developers</a>
-            <a href="#ecosystem">Ecosystem</a>
+            <a href={communityLinks.twitter} target="_blank" rel="noreferrer">Twitter</a>
           </nav>
         </div>
       </div>

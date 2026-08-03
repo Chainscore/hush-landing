@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Fragment+Mono&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --ifm-color-primary: #d6ff3f;
+  --ifm-color-primary-dark: #bde634;
+  --ifm-color-primary-darker: #b1d932;
+  --ifm-color-primary-darkest: #91b329;
+  --ifm-color-primary-light: #ddff63;
+  --ifm-color-primary-lighter: #e1ff76;
+  --ifm-color-primary-lightest: #ebffab;
+  --ifm-background-color: #08090a;
+  --ifm-background-surface-color: #121315;
+  --ifm-color-content: #f1f0ec;
+  --ifm-color-content-secondary: #8c8d8f;
+  --ifm-font-family-base: 'Inter', Arial, sans-serif;
+  --ifm-heading-font-family: 'Bricolage Grotesque', Arial, sans-serif;
+  --ifm-font-family-monospace: 'Fragment Mono', 'Courier New', monospace;
+  --ifm-code-font-size: 95%;
+  --ifm-navbar-background-color: #08090a;
+  --ifm-footer-background-color: #08090a;
+  --ifm-toc-border-color: #2a2d30;
+  --ifm-hr-border-color: #2a2d30;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #08090a;
+  --ifm-background-surface-color: #121315;
+  --ifm-color-content: #f1f0ec;
+  --ifm-color-content-secondary: #8c8d8f;
+}
+
+body {
+  background: #08090a;
+}
+
+.navbar {
+  border-bottom: 1px solid #2a2d30;
+  box-shadow: none;
+}
+
+.navbar__title,
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-family: var(--ifm-heading-font-family);
+  letter-spacing: -0.04em;
+}
+
+.navbar__title {
+  font-size: 1.25rem;
+}
+
+.navbar__logo {
+  height: 1.65rem;
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid #2a2d30;
+}
+
+.theme-doc-markdown h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  line-height: 0.98;
+}
+
+.theme-doc-markdown h2 {
+  margin-top: 3rem;
+}
+
+.theme-doc-markdown p,
+.theme-doc-markdown li {
+  color: #c2c3c2;
+  line-height: 1.75;
+}
+
+.theme-doc-markdown strong {
+  color: #f1f0ec;
+}
+
+.theme-doc-markdown blockquote {
+  border-left-color: #d6ff3f;
+  color: #c2c3c2;
+}
+
+.theme-doc-markdown code {
+  border: 1px solid #2a2d30;
+  background: #121315;
+}
+
+.footer {
+  border-top: 1px solid #2a2d30;
+}
+
+.footer__title,
+.footer__item {
+  font-family: var(--ifm-font-family-monospace);
+}
