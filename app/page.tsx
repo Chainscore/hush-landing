@@ -364,40 +364,23 @@ function HushFooter() {
   return (
     <footer className="hush-footer">
       <div className="hush-footer__inner">
-        <div className="hush-footer__main reveal reveal--up" data-reveal>
-          <div className="hush-footer__identity">
-            <a className="hush-footer__mark" href="#top" aria-label="Hush home">
-              hush<span>.</span>
-            </a>
-            <p>Confidential execution<br />for open markets.</p>
-          </div>
-
-          <div className="hush-footer__links">
-            <div className="hush-footer__column">
-              <p>Explore</p>
-              <a href="#protocol">Protocol</a>
-              <a href="#ecosystem">Capabilities</a>
-              <a href="#guarantees">Guarantees</a>
-            </div>
-            <div className="hush-footer__column">
-              <p>Build</p>
-              <a href="#developers">Developers</a>
-              <a href="#developers">Workflow</a>
-              <a href="#launch">Launch app</a>
-            </div>
-            <div className="hush-footer__column">
-              <p>Connect</p>
-              <a href="mailto:hello@hush.cardano">Email</a>
-              <a href="#top">X / Twitter</a>
-              <a href="#top">Discord</a>
-            </div>
-          </div>
+        <div className="hush-footer__utility reveal reveal--up" data-reveal>
+          <span>Confidential execution for open markets</span>
+          <a href="#launch">Launch Hush <b>↗</b></a>
         </div>
 
-        <div className="hush-footer__bottom reveal reveal--up" data-reveal data-delay="140">
-          <span>hush · Confidential execution for open markets</span>
-          <span>Built on Cardano</span>
+        <a className="hush-footer__wordmark reveal reveal--up" data-reveal data-delay="100" href="#top" aria-label="Hush home">
+          hush<span>.</span>
+        </a>
+
+        <div className="hush-footer__meta reveal reveal--up" data-reveal data-delay="180">
           <span>© 2026 hush</span>
+          <span>Built on Cardano</span>
+          <nav aria-label="Footer navigation">
+            <a href="#protocol">Protocol</a>
+            <a href="#developers">Developers</a>
+            <a href="#ecosystem">Ecosystem</a>
+          </nav>
         </div>
       </div>
     </footer>
