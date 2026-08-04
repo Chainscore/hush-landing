@@ -11,6 +11,8 @@ npm run dev
 
 This starts both servers. The landing page is available at `http://localhost:3000` and the docs are proxied at `http://localhost:3000/docs/`.
 
+The waitlist form stores an email in the browser when no endpoint is configured. For central collection, set `NEXT_PUBLIC_WAITLIST_ENDPOINT` to a form endpoint before building.
+
 To run the docs server by itself:
 
 ```bash

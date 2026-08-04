@@ -39,11 +39,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'hush',
-      logo: {
-        alt: 'hush mark',
-        src: 'img/hush-mark.svg',
-      },
+      title: 'hush.',
       items: [
         {
           href: 'https://hushmoney.fun',
@@ -51,13 +47,13 @@ const config: Config = {
           position: 'right',
         },
         {
-          href: 'https://discord.com/',
-          label: 'Join Discord',
+          href: 'https://hushmoney.fun/#waitlist',
+          label: 'Join waitlist',
           position: 'right',
         },
         {
-          href: 'https://twitter.com/',
-          label: 'Follow Twitter',
+          href: 'https://x.com/HushProtocolHQ',
+          label: 'Follow on X',
           position: 'right',
         },
       ],
@@ -69,14 +65,14 @@ const config: Config = {
           title: 'Explore',
           items: [
             {label: 'Website', href: 'https://hushmoney.fun'},
-            {label: 'Community', to: '/community'},
+            {label: 'Waitlist', href: 'https://hushmoney.fun/#waitlist'},
           ],
         },
         {
           title: 'Community',
           items: [
-            {label: 'Join Discord', href: 'https://discord.com/'},
-            {label: 'Follow Twitter', href: 'https://twitter.com/'},
+            {label: 'Join waitlist', href: 'https://hushmoney.fun/#waitlist'},
+            {label: 'Follow on X', href: 'https://x.com/HushProtocolHQ'},
           ],
         },
       ],

@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   title: "hush — Confidential execution for open markets",
   description:
     "Hush privately finds competing quotes, sponsors the network fee, and settles directly from your wallet.",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

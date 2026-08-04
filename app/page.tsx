@@ -1,4 +1,5 @@
 import { ScrollEffects } from "./components/ScrollEffects";
+import { WaitlistForm } from "./components/WaitlistForm";
 
 const assets = {
   hero: "/assets/hero-section.png",
@@ -16,8 +17,8 @@ const assets = {
 
 const communityLinks = {
   docs: "/docs/",
-  discord: "https://discord.com/",
-  twitter: "https://twitter.com/",
+  waitlist: "#waitlist",
+  twitter: "https://x.com/HushProtocolHQ",
 };
 
 type ButtonProps = {
@@ -30,7 +31,7 @@ type ButtonProps = {
 
 function Button({
   children,
-  href = "#launch",
+  href = "#waitlist",
   variant = "solid",
   className = "",
   external = false,
@@ -101,7 +102,7 @@ function TransactionMockup() {
         </div>
       </div>
 
-      <a className="button button--solid transaction-button" href="#launch">
+      <a className="button button--solid transaction-button" href="#waitlist">
         Confirm &amp; Sign
       </a>
     </div>
@@ -151,7 +152,7 @@ function SiteHeader() {
   return (
     <header className="site-header reveal reveal--down" data-reveal>
       <a className="brand" href="#top" aria-label="Hush home">
-        hush
+        hush<span>.</span>
       </a>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
@@ -161,8 +162,8 @@ function SiteHeader() {
         <a href="#ecosystem">Ecosystem</a>
       </nav>
 
-      <Button href={communityLinks.discord} className="header-button" external>
-        Join Discord
+      <Button href={communityLinks.waitlist} className="header-button">
+        Join waitlist
       </Button>
 
       <details className="mobile-nav">
@@ -172,7 +173,7 @@ function SiteHeader() {
           <a href="#developers">Developers</a>
           <a href={communityLinks.docs}>Docs</a>
           <a href="#ecosystem">Ecosystem</a>
-          <a href={communityLinks.discord} target="_blank" rel="noreferrer">Join Discord</a>
+          <a href={communityLinks.waitlist}>Join waitlist</a>
         </nav>
       </details>
     </header>
@@ -198,9 +199,9 @@ function Hero() {
               Hush privately finds competing quotes, sponsors the network fee, and settles directly from your wallet.
             </p>
             <div className="hero-actions">
-              <Button href={communityLinks.discord} external>Join Discord</Button>
+              <Button href={communityLinks.waitlist}>Join the waitlist</Button>
               <Button href={communityLinks.twitter} variant="outline" external>
-                Follow on Twitter
+                Follow on X
               </Button>
             </div>
           </div>
@@ -362,16 +363,17 @@ function Trust() {
 
 function Closing() {
   return (
-    <section className="closing scroll-section" id="launch" data-scroll-section>
+    <section className="closing scroll-section" id="closing" data-scroll-section>
       <BackgroundArt src={assets.closing} overlay="surface-overlay" />
       <div className="closing__inner">
         <div className="closing-content reveal reveal--scale" data-reveal>
           <h2>The market does not need to know.</h2>
           <p>Execute through Hush.</p>
           <div className="closing-actions">
-            <Button href={communityLinks.discord} external>Join Discord</Button>
-            <Button href={communityLinks.twitter} variant="outline" external>Follow on Twitter</Button>
+            <Button href={communityLinks.waitlist}>Join the waitlist</Button>
+            <Button href={communityLinks.twitter} variant="outline" external>Follow on X</Button>
           </div>
+          <WaitlistForm />
         </div>
       </div>
     </section>
@@ -384,7 +386,7 @@ function HushFooter() {
       <div className="hush-footer__inner">
         <div className="hush-footer__utility reveal reveal--up" data-reveal>
           <span>Confidential execution for open markets</span>
-          <a href={communityLinks.discord} target="_blank" rel="noreferrer">Join Discord <b>↗</b></a>
+          <a href={communityLinks.waitlist}>Join the waitlist <b>↗</b></a>
         </div>
 
         <a className="hush-footer__wordmark reveal reveal--up" data-reveal data-delay="100" href="#top" aria-label="Hush home">
@@ -397,7 +399,7 @@ function HushFooter() {
           <nav aria-label="Footer navigation">
             <a href={communityLinks.docs}>Docs</a>
             <a href="#developers">Developers</a>
-            <a href={communityLinks.twitter} target="_blank" rel="noreferrer">Twitter</a>
+            <a href={communityLinks.twitter} target="_blank" rel="noreferrer">X</a>
           </nav>
         </div>
       </div>

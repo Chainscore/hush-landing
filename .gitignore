@@ -4,5 +4,6 @@ docs/.docusaurus/
 .next/
 out/
 .playwright-mcp/
+.env*.local
 hush-landing.png
 .DS_Store
