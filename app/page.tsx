@@ -61,6 +61,10 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="section-label">{children}</p>;
 }
 
+function CardanoLogo({ className = "" }: { className?: string }) {
+  return <img className={`cardano-logo ${className}`} src={assets.ada} alt="" aria-hidden="true" />;
+}
+
 function Token({ icon, label, tone }: { icon: string; label: string; tone: "ada" | "usdc" }) {
   return (
     <div className="token">
@@ -189,7 +193,10 @@ function Hero() {
 
         <div className="hero-copy reveal reveal--up" data-reveal data-delay="120">
           <div className="hero-copy__content">
-            <SectionLabel>Cardano Private Execution</SectionLabel>
+            <p className="section-label section-label--brand" aria-label="Cardano Private Execution">
+              <CardanoLogo className="cardano-logo--label" />
+              <span>Private Execution</span>
+            </p>
             <h1>
               Pay with anything.
               <br />
@@ -395,7 +402,10 @@ function HushFooter() {
 
         <div className="hush-footer__meta reveal reveal--up" data-reveal data-delay="180">
           <span>© 2026 hush</span>
-          <span>Built on Cardano</span>
+          <span className="cardano-lockup" role="img" aria-label="Built on Cardano">
+            <span>Built on</span>
+            <CardanoLogo className="cardano-logo--footer" />
+          </span>
           <nav aria-label="Footer navigation">
             <a href={communityLinks.docs}>Docs</a>
             <a href="#developers">Developers</a>

@@ -131,6 +131,37 @@ main {
   text-transform: uppercase;
 }
 
+.section-label--brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardano-logo {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.cardano-logo--label {
+  width: 21px;
+  height: 21px;
+}
+
+.cardano-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.cardano-logo--footer {
+  width: 22px;
+  height: 22px;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
