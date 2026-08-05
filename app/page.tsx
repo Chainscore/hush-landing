@@ -7,6 +7,7 @@ const assets = {
   guarantees: "/assets/section-5-value-props.png",
   closing: "/assets/section-8-closing.png",
   ada: "/assets/cardano-icon.svg",
+  cardano: "/assets/cardano-horizontal-blue.svg",
   usdc: "/assets/usdc-token.svg",
   swap: "/assets/refresh-cw.svg",
   pay: "/assets/file-text.svg",
@@ -59,6 +60,10 @@ function BackgroundArt({ src, overlay = "surface-overlay" }: { src: string; over
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="section-label">{children}</p>;
+}
+
+function CardanoLogo({ className = "" }: { className?: string }) {
+  return <img className={`cardano-logo ${className}`} src={assets.cardano} alt="" aria-hidden="true" />;
 }
 
 function Token({ icon, label, tone }: { icon: string; label: string; tone: "ada" | "usdc" }) {
@@ -189,7 +194,10 @@ function Hero() {
 
         <div className="hero-copy reveal reveal--up" data-reveal data-delay="120">
           <div className="hero-copy__content">
-            <SectionLabel>Cardano Private Execution</SectionLabel>
+            <p className="section-label section-label--brand" aria-label="Cardano Private Execution">
+              <CardanoLogo className="cardano-logo--label" />
+              <span>Private Execution</span>
+            </p>
             <h1>
               Pay with anything.
               <br />
@@ -395,7 +403,10 @@ function HushFooter() {
 
         <div className="hush-footer__meta reveal reveal--up" data-reveal data-delay="180">
           <span>© 2026 hush</span>
-          <span>Built on Cardano</span>
+          <span className="cardano-lockup" role="img" aria-label="Built on Cardano">
+            <span>Built on</span>
+            <CardanoLogo className="cardano-logo--footer" />
+          </span>
           <nav aria-label="Footer navigation">
             <a href={communityLinks.docs}>Docs</a>
             <a href="#developers">Developers</a>
