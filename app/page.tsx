@@ -7,6 +7,7 @@ const assets = {
   guarantees: "/assets/section-5-value-props.png",
   closing: "/assets/section-8-closing.png",
   ada: "/assets/cardano-icon.svg",
+  cardano: "/assets/cardano-horizontal-blue.svg",
   usdc: "/assets/usdc-token.svg",
   swap: "/assets/refresh-cw.svg",
   pay: "/assets/file-text.svg",
@@ -62,7 +63,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 function CardanoLogo({ className = "" }: { className?: string }) {
-  return <img className={`cardano-logo ${className}`} src={assets.ada} alt="" aria-hidden="true" />;
+  return <img className={`cardano-logo ${className}`} src={assets.cardano} alt="" aria-hidden="true" />;
 }
 
 function Token({ icon, label, tone }: { icon: string; label: string; tone: "ada" | "usdc" }) {
